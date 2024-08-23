@@ -1,23 +1,15 @@
 package com.glory.bankapplication.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class EnquiryRequest {
-
-    // Create an instance variable
-
+public class CreditDebitRequestDTO {
     private String accountNumber;
-
-
-
-
-
+    private BigDecimal amount;
 }

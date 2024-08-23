@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class BankResponse {
+public class BankResponseDTO {
 
     /**
      * In this application, I want just a single or uniform response format for every single service.
@@ -18,5 +18,5 @@ public class BankResponse {
 
     private String responseCode;
     private String responseMessage;
-    private AccountInfo accountInfo;
+    private AccountInfoDTO accountInfo;
 }

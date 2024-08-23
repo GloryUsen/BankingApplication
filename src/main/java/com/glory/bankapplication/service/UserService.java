@@ -1,14 +1,18 @@
 package com.glory.bankapplication.service;
 
-import com.glory.bankapplication.dto.BankResponse;
+import com.glory.bankapplication.dto.BankResponseDTO;
 import com.glory.bankapplication.dto.BankUserRequestDTO;
-import com.glory.bankapplication.dto.EnquiryRequest;
+import com.glory.bankapplication.dto.CreditDebitRequestDTO;
+import com.glory.bankapplication.dto.EnquiryRequestDTO;
 
 public interface UserService {                      // This class contains method.
-    BankResponse createAccount(BankUserRequestDTO bankUserRequestDTO); // This method is the response return type, taking a parameter of BankUserRequestDTO.
+    BankResponseDTO createAccount(BankUserRequestDTO bankUserRequestDTO); // This method is the response return type, taking a parameter of BankUserRequestDTO.
 
-    BankResponse balanceEnquiry(EnquiryRequest enquiryRequest);
+    BankResponseDTO balanceEnquiry(EnquiryRequestDTO enquiryRequest);
 
-    String nameEnquiry(EnquiryRequest enquiryRequest);
+    String nameEnquiry(EnquiryRequestDTO enquiryRequest);
+
+    BankResponseDTO creditAccount(CreditDebitRequestDTO request);
+    BankResponseDTO debitAccount(CreditDebitRequestDTO request);
 
 }

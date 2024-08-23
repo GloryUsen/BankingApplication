@@ -8,9 +8,6 @@ public interface BankUserRepository extends JpaRepository<BankUser, Long> { // B
 
       Boolean existsByAccountNumber(String accountNumber);
 
-      BankUser findBankUserByAccountNumber(String accountNumber);
-
-
-
+      BankUser findByAccountNumber(String accountNumber);
 
 }

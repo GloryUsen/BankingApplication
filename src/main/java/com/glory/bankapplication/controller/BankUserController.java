@@ -1,8 +1,9 @@
 package com.glory.bankapplication.controller;
 
-import com.glory.bankapplication.dto.BankResponse;
+import com.glory.bankapplication.dto.BankResponseDTO;
 import com.glory.bankapplication.dto.BankUserRequestDTO;
-import com.glory.bankapplication.dto.EnquiryRequest;
+import com.glory.bankapplication.dto.CreditDebitRequestDTO;
+import com.glory.bankapplication.dto.EnquiryRequestDTO;
 import com.glory.bankapplication.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,20 +19,34 @@ public class BankUserController {
     UserService userService;
 
     @PostMapping
-    public BankResponse createAccount(@RequestBody BankUserRequestDTO bankUserRequestDTO){
+    public BankResponseDTO createAccount(@RequestBody BankUserRequestDTO bankUserRequestDTO){
         return userService.createAccount(bankUserRequestDTO);
     }
-//
-//    @GetMapping("nameEnquiry")
-//    public String nameEnquiry(@RequestBody EnquiryRequest enquiryRequest){
-//        return userService.nameEnquiry(enquiryRequest);
-//
-//    }
-//
-//    public BankResponse balanceEnquiry(@RequestBody EnquiryRequest enquiryRequest){
-//        return userService.balanceEnquiry(enquiryRequest);
-//
-//    }
+
+
+    @GetMapping("balanceEnquiry")
+    public BankResponseDTO balanceEnquiry(@RequestBody EnquiryRequestDTO request){
+        return userService.balanceEnquiry(request);
+
+    }
+
+    @GetMapping("nameEnquiry")
+    public String nameEnquiry(@RequestBody EnquiryRequestDTO request){
+        return userService.nameEnquiry(request);
+
+    }
+
+    @PostMapping("credit")
+    public BankResponseDTO creditAccount(@RequestBody CreditDebitRequestDTO requestDTO){
+        return userService.creditAccount(requestDTO);
+
+    }
+
+    @PostMapping("debit")
+    public BankResponseDTO debitAccount(@RequestBody CreditDebitRequestDTO requestDTO){
+        return userService.debitAccount(requestDTO);
+
+    }
 
 
 }
