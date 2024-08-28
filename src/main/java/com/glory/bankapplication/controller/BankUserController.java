@@ -1,9 +1,6 @@
 package com.glory.bankapplication.controller;
 
-import com.glory.bankapplication.dto.BankResponseDTO;
-import com.glory.bankapplication.dto.BankUserRequestDTO;
-import com.glory.bankapplication.dto.CreditDebitRequestDTO;
-import com.glory.bankapplication.dto.EnquiryRequestDTO;
+import com.glory.bankapplication.dto.*;
 import com.glory.bankapplication.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -46,6 +43,11 @@ public class BankUserController {
     public BankResponseDTO debitAccount(@RequestBody CreditDebitRequestDTO requestDTO){
         return userService.debitAccount(requestDTO);
 
+    }
+
+    @PostMapping("transfer")
+    public BankResponseDTO transfer(@RequestBody TransferRequestDTO requestDTO){
+        return userService.transfer(requestDTO);
     }
 
 

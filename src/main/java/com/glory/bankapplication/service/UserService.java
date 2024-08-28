@@ -1,9 +1,6 @@
 package com.glory.bankapplication.service;
 
-import com.glory.bankapplication.dto.BankResponseDTO;
-import com.glory.bankapplication.dto.BankUserRequestDTO;
-import com.glory.bankapplication.dto.CreditDebitRequestDTO;
-import com.glory.bankapplication.dto.EnquiryRequestDTO;
+import com.glory.bankapplication.dto.*;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,5 +13,6 @@ public interface UserService {                      // This class contains metho
 
     BankResponseDTO creditAccount(CreditDebitRequestDTO request);
     BankResponseDTO debitAccount(CreditDebitRequestDTO request);
+    BankResponseDTO transfer(TransferRequestDTO request);
 
 }
